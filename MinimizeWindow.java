@@ -1,0 +1,24 @@
+package com.SA.org.SeleniumAssignment;
+
+import java.awt.Point;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MinimizeWindow {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\choubeyj\\eclipse-workspace\\SeleniumAssignment\\Drivers\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		//ChromeDriver driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		
+		driver.manage().window().setPosition(new Point(-1500, 0));
+		driver.close();
+	}
+
+}
